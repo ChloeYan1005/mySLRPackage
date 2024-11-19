@@ -1,0 +1,36 @@
+---
+title: "slr tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{slr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This vignette demonstrates the use of the `slr` function from the `mySLRPackage` to perform simple linear regression on the `mtcars` dataset, focusing on the relationship between a car's weight (`wt`) and its fuel efficiency (`mpg`).
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(mySLRPackage)
+library(car)
+```
+
+To use the function `slr`:
+
+```{r}
+slr(mtcars$wt, mtcars$mpg)
+```
+
+To include plot:
+
+```{r, echo=FALSE}
+plot(mtcars$wt, mtcars$mpg, main = "Fuel Efficiency vs. Car Weight",
+     xlab = "Car Weight", ylab = "Fuel Efficiency (mpg)",
+     pch = 19, col = "blue")  # using blue points for better visibility
+abline(results$intercept, results$slope, col = "red") 
+```

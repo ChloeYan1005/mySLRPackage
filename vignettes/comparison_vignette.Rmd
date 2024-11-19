@@ -1,0 +1,63 @@
+---
+title: "Comparing Simple Linear Regression with R's lm() Function"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{comparison_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mySLRPackage)
+library(bench)
+library(car)
+```
+
+```{r}
+set.seed(42)
+x <- mtcars$wt
+y <- mtcars$mpg
+```
+
+```{r}
+slr_results <- slr(x, y)
+lm_results <- lm(y ~ x)
+
+slr_coeffs <- c(Intercept = slr_results$intercept, Slope = slr_results$slope)
+lm_coeffs <- coef(lm_results)
+
+# check equality
+all.equal(unname(lm_coeffs), unname(slr_coeffs))
+```
+
+```{r}
+summary_lm <- summary(lm_results)
+
+lm_t <- summary_lm$coefficients[, "t value"]
+lm_p <- summary_lm$coefficients[, "Pr(>|t|)"]
+
+slr_t <- c(Intercept = slr_results$t_statistic_intercept, Slope = slr_results$t_statistic_slope)
+slr_p <- c(Intercept = slr_results$p_value_intercept, Slope = slr_results$p_value_slope)
+
+# check equality
+all.equal(unname(lm_t), unname(slr_t))
+all.equal(unname(lm_p), unname(slr_p))
+```
+
+```{r}
+benchmark_results <- bench::mark(
+  slr = slr(x, y),
+  lm = lm(y ~ x),
+  check = FALSE 
+)
+
+print(benchmark_results, results = 'asis')
+
+```
