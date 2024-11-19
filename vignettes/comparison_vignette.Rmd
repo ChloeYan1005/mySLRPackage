@@ -2,7 +2,7 @@
 title: "Comparing Simple Linear Regression with R's lm() Function"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{comparison_vignette}
+  %\VignetteIndexEntry{Comparing Simple Linear Regression with R's lm() Function}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

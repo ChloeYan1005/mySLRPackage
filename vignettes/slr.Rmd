@@ -2,7 +2,7 @@
 title: "slr tutorial"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{slr}
+  %\VignetteIndexEntry{slr tutorial}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,7 +23,8 @@ library(car)
 To use the function `slr`:
 
 ```{r}
-slr(mtcars$wt, mtcars$mpg)
+results <- slr(mtcars$wt, mtcars$mpg)
+print(results)
 ```
 
 To include plot:
