@@ -1,6 +1,6 @@
 # mySLRPackage
 [![R-CMD-check.yaml](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/R-CMD-check.yaml)
-[![test-coverage.yaml](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/test-coverage.yaml)
+[![codecov](https://codecov.io/github/ChloeYan1005/mySLRPackage/graph/badge.svg?token=70YZ9W0IAB)](https://codecov.io/github/ChloeYan1005/mySLRPackage)
 ## Overview
 
 The goal of `mySLRPackage` is to provides a simple implementation of simple linear regression (SLR). It is designed to offer an straightforward way to perform SLR analyses, providing clear outputs for intercept, slope, and other relevant statistical tests.
