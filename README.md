@@ -9,7 +9,7 @@ The goal of `mySLRPackage` is to provides a simple implementation of simple line
 To install the latest development version of `mySLRPackage` from GitHub, use:
 
 ``` r
-# install.packages("devtools")  # Uncomment this line if you don't have devtools installed
+# install.packages("devtools")
 devtools::install_github("yourgithubusername/mySLRPackage")
 ```
 
