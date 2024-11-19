@@ -1,5 +1,5 @@
 # mySLRPackage
-
+[![R-CMD-check.yaml](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChloeYan1005/mySLRPackage/actions/workflows/R-CMD-check.yaml)
 ## Overview
 
 The goal of `mySLRPackage` is to provides a simple implementation of simple linear regression (SLR). It is designed to offer an straightforward way to perform SLR analyses, providing clear outputs for intercept, slope, and other relevant statistical tests.
